@@ -1,0 +1,60 @@
+<h3>Собе Админ</h3><br/>
+<p><strong>НАПОМЕНА</strong></p>
+<p><strong>Унос нове собе:</strong> Попуните сва поља осим поља ID, а затим кликните на "Региструј собу"</p>
+<p><strong>Измена постојеће собе:</strong> Попуните сва поља, а затим кликните на "Измени собу"</p>
+<p><strong>Брисање постојеће собе:</strong> Унесите само поље ID (број постојеће собе), а затим кликните на "Обриши собу"</p>
+<br />
+<form role="form" [ngFormModel]="registerForm">
+    <div class="form-group">
+        <label for="ime">ID:</label>
+        <input type="text" class="form-control" ngControl='id'>
+    </div>
+    <div class="form-group">
+        <label for="ime">Име собе:</label>
+        <input type="text" class="form-control" ngControl='ime'>
+    </div>
+    <div class="form-group">
+        <label for="sprat">Спрат</label>
+        <input type="text" class="form-control" ngControl='sprat'>
+    </div>
+    <div class="form-group">
+        <label for="kreveti">Број кревета:</label>
+        <input type="text" class="form-control" ngControl='kreveti'>
+    </div>
+    <div class="form-group">
+        <label for="m2">Површина собе (м2):</label>
+        <input type="text" class="form-control" ngControl='m2'>
+    </div>
+    <div class="form-group">
+        <label for="tv">TV:</label>
+        <select class="form-control" ng-selected="Da" ngControl='tv'>
+        <option value="Da" >Да</option>
+        <option value="Ne" >Не</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="internet">Интернет:</label>
+        <select class="form-control" ng-selected="Da" ngControl='internet'>
+        <option value="Da" >Да</option>
+        <option value="Ne" >Не</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="djakuzi">Ђакузи:</label>
+        <select class="form-control" ng-selected="Da" ngControl='djakuzi'>
+        <option value="Da" >Да</option>
+        <option value="Ne" >Не</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="rezervacija">Резервација:</label>
+        <select class="form-control" ng-selected="REZERVISANA" ngControl='rezervacija'>
+        <option value="REZERVISANA" >Резервисана</option>
+        <option value="SLOBODNA" >Слободна</option>
+        </select>
+    </div>
+
+    <button (click)="dodajSobu()" class="btn btn-warning">Региструј собу</button>
+    <button (click)="izmeniSobu()" class="btn btn-primary">Измени собу</button>
+    <button (click)="obrisiSobu()" class="btn btn-info">Обриши собу</button>
+</form>
